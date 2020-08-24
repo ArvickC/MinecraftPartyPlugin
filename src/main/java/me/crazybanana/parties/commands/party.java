@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import static org.bukkit.ChatColor.*;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -109,6 +110,7 @@ public class party implements CommandExecutor {
                 ExpireTimer et = new ExpireTimer(player.getName(), args[i], this);
                 t.schedule(et, expireTime * 1000);
                 player.sendMessage(ChatColor.AQUA + "You Sent " + ChatColor.GOLD + args[i] + ChatColor.AQUA + " a party invite! This invite will expire in " + ChatColor.GOLD + expireTime + " Seconds!");
+                Bukkit.getServer().getPlayer(args[i]).playSound(Bukkit.getPlayer(args[i]).getLocation(), Sound.BLOCK_NOTE_BLOCK_PLING, 3.0F, 0.5F);
                 Bukkit.getServer().getPlayer(args[i]).sendMessage(ChatColor.AQUA + "Hey" + ChatColor.GOLD + "! " + player.getName() + ChatColor.AQUA + " sent you a" + ChatColor.GOLD + " party invite" + ChatColor.AQUA + "! Type" + ChatColor.GOLD+ " /party accept " + ChatColor.AQUA + "to join their party! This invite will expire in " + ChatColor.GOLD + expireTime + " Seconds!");
                 Bukkit.getServer().getPlayer(args[i]).setInvulnerable(false);
 
