@@ -1,0 +1,10 @@
+name: Parties
+version: 1.3.2
+main: me.crazybanana.parties.Parties
+api-version: 1.16
+authors: [CrazyBanana]
+description: Have parties in minecraft!
+commands:
+  party:
+    description: This is a test!
+    aliases: [p]
